@@ -69,8 +69,8 @@ tags: [javascript, style, controls, timers]
     }
 
     #setting input:checked + label{
-        background-color: #FFF;
-        color: #000;
+        background-color: #000000;
+        color: #FFFFFF;
     }
 </style>
 
@@ -82,13 +82,13 @@ tags: [javascript, style, controls, timers]
     <div class="container bg-secondary" style="text-align:center;">
         <!-- Main Menu -->
         <div id="menu" class="py-4 text-light">
-            <p>Welcome to Snake, press <span style="background-color: #373737;; color: #000000">space</span> to begin</p>
+            <p>Welcome to Snake, press <span style="background-color: #373737;; color: #FFFFFF">space</span> to begin</p>
             <a id="new_game" class="link-alert">new game</a>
             <a id="setting_menu" class="link-alert">settings</a>
         </div>
         <!-- Game Over -->
         <div id="gameover" class="py-4 text-light">
-            <p>Game Over, press <span style="background-color: #373737;; color: #000000">space</span> to try again</p>
+            <p>Game Over, press <span style="background-color: #373737;; color: #FFFFFF">space</span> to try again</p>
             <a id="new_game1" class="link-alert">new game</a>
             <a id="setting_menu1" class="link-alert">settings</a>
         </div>
