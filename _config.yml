@@ -38,10 +38,16 @@ baseurl: "/APCSA" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
+  skin: dark
+  #  social_links:
+  #    twitter: NighthawkCoding
+  #    github: nighthawkcoders
+  #   youtube_channel: UClIKOsDS5dsfzFA3zveDT3Q
   social_links:
-    twitter: NighthawkCoding
-    github: nighthawkcoders
-    youtube_channel: UClIKOsDS5dsfzFA3zveDT3Q
+    - { platform: github, user_url: "https://github.com/nighthawkcoders"}
+    - { platform: twitter, user_url: "https://twitter.com/NighthawkCoding"}
+    - { platform: youtube, user_url: "https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q"}
+
 
 # Set this to true to get LaTeX math equation support
 use_math: 
@@ -65,6 +71,7 @@ exclude:
   - docker-compose.yml
   - action.yml
   - Makefile
+  - settings.ini
 
 # this setting allows you to keep pages organized in the _pages folder
 include:
@@ -123,5 +130,3 @@ feed:
   posts_limit: 5 #default posts_limit: 10
   excerpt_only: true
   
-exclude:
-  - settings.ini

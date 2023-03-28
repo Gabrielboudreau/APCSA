@@ -1,9 +1,10 @@
 ---
 title: Binary Math
-layout: default
+layout: base
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 permalink: /frontend/binary
 image: /images/binary.png
+categories: [C4.4]
 tags: [html, liquid, javascript]
 ---
 

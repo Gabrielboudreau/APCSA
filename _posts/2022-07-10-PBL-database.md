@@ -1,15 +1,16 @@
 ---
-layout: default
+layout: base
 title: Database CRUD Operations
 description: An advanced example of do database create, read, update, delete operations working asynchronously between JavaScript and a Java backend Database.  This requires a set of Java RESTful API services for Get, Put, Delete, and Update.
 permalink: /data/database
 image: /images/database.png
+categories: [C4.7, C7.0, C8.1, C8.6]
 tags: [javascript]
 ---
 
 {% include nav_data.html %}
 
-## Students
+## SQL Database
 <!-- HTML table fragment for page -->
 <table>
   <thead>
@@ -29,16 +30,19 @@ tags: [javascript]
   // prepare HTML result container for new output
   const resultContainer = document.getElementById("result");
 
-  // prepare fetch options
-  const url = "https://csa.nighthawkcodingsociety.com/api/person/all";
+  // prepare URL
+  var url = "https://spring.nighthawkcodingsociety.com/api/person/";
+  // Uncomment next line for localhost testing
+  // url = "http://localhost:8085/api/person/";
+
+  // set options for cross origin header request
   const options = {
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'omit', // include, *same-origin, omit
+    credentials: 'include', // include, *same-origin, omit
     headers: {
-      'Content-Type': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
     },
   };
 
@@ -46,7 +50,7 @@ tags: [javascript]
   fetch(url, options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
-      // check for response errors
+      // check for response errors and display
       if (response.status !== 200) {
           const errorMsg = 'Database response error: ' + response.status;
           console.log(errorMsg);
@@ -57,7 +61,7 @@ tags: [javascript]
           resultContainer.appendChild(tr);
           return;
       }
-      // valid response will have json data
+      // valid response will contain json data
       response.json().then(data => {
           console.log(data);
           for (const row of data) {
@@ -84,7 +88,7 @@ tags: [javascript]
     console.error(err);
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.innerHTML = err;
+    td.innerHTML = err + ": " + url;
     tr.appendChild(td);
     resultContainer.appendChild(tr);
   });

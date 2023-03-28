@@ -1,10 +1,11 @@
 ---
 title: Grade Calculator
-layout: default
+layout: base
 description: Supports grade inputs and calculates average. 
 permalink: /frontend/grades
 image: /images/grade_calc.png
 tags: [javascript, html, input, onblur]
+categories: [2.C]
 ---
 
 <!-- For hacks take inspiration form here: https://www.rapidtables.com/calc/grade/grade-calculator.html -->
